@@ -1,0 +1,183 @@
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lempel-Ziv Compression</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #1e90ff;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 2em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #87cefa;
+            padding: 10px 0;
+        }
+        nav button {
+            background-color: #4682b4;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav button:hover {
+            background-color: #1e90ff;
+        }
+        .start-section {
+            text-align: center;
+            margin: 30px auto;
+        }
+        .start-section img {
+            width: 60%;
+            max-width: 800px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .start-section button {
+            background-color: #1e90ff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .start-section button:hover {
+            background-color: #4682b4;
+        }
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .intro {
+            background-color: #e6f2ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        .content-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #1e90ff;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .flowchart {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+    
+    
+</head>
+<body>
+
+    <header>
+        Lempel-Ziv Compression
+    </header>
+    
+
+    
+
+    <section class="start-section">
+        <button onclick="window.location.href='{% url 'base:login' %}';">Start up</button>
+    </section>
+
+    <section>
+        <div class="intro">
+            <h2>What is Lempel-Ziv Compression?</h2>
+            <p>Lempel-Ziv (LZ) compression is a popular algorithm for lossless data compression. It works by finding repeated patterns in data and replacing them with references to a single copy of that data. This technique is efficient and widely used in various applications, including data transmission and file storage.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>How Lempel-Ziv Compression Works</h2>
+            <p>The key steps in Lempel-Ziv compression are as follows:</p>
+            <ul>
+                <li>Read the input data in chunks.</li>
+                <li>Identify repeated sequences of characters or strings.</li>
+                <li>Create a dictionary or table of found patterns.</li>
+                <li>Replace repeated patterns in the data with references to the dictionary.</li>
+                <li>Output the compressed data along with the dictionary.</li>
+            </ul>
+
+            <div class="flowchart">
+                <h3>Flowchart of Lempel-Ziv Compression</h3>
+                <img src="lempel..webp" alt="Lempel-Ziv Compression Flowchart">
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Decompression Process</h2>
+            <p>The decompression process involves using the dictionary created during compression to replace references with the original data. By following the references, the original data can be perfectly restored.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Applications of Lempel-Ziv Compression</h2>
+            <p>Lempel-Ziv compression is widely used in various applications, including:</p>
+            <ul>
+                <li>File Compression: Formats like ZIP and LZW use Lempel-Ziv for lossless compression.</li>
+                <li>Data Transmission: Efficiently reduces data size for faster transmission over networks.</li>
+                <li>Multimedia Compression: Utilized in image formats like GIF and PNG for effective data storage.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Advantages of Lempel-Ziv Compression</h2>
+            <ul>
+                <li><strong>Lossless Compression:</strong> No information is lost during compression, ensuring original data can be perfectly restored.</li>
+                <li><strong>Adaptable to Different Data Types:</strong> Works well with a variety of data types, making it versatile.</li>
+                <li><strong>Efficient for Large Data Sets:</strong> Particularly effective when compressing large files with repeated patterns.</li>
+                <li><strong>Widely Used:</strong> Standardized and supported across numerous software and applications.</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        function startNow() {
+            
+            window.location.href = "index.html"; 
+        }
+    </script>
+</body>
+</html>
+
+
+{% endblock content %}

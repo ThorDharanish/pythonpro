@@ -1,0 +1,132 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lempel-Ziv Encoding Features</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4ff; 
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #0047ab; 
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 2em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #87cefa; 
+            padding: 10px 0;
+        }
+        nav button {
+            background-color: #4682b4; 
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav button:hover {
+            background-color: #0056b3; 
+        }
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .intro {
+            background-color: #e0f7fa; 
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        .feature-card {
+            background-color: white; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: scale(0.95); 
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: scale(1.05); 
+        }
+        h2 {
+            color: #0047ab; 
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0; 
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Lempel-Ziv Encoding Features
+    </header>
+
+    <nav>
+        <button onclick="window.location.href='{% url 'base:home' %}';">Home</button>
+        <button onclick="window.location.href='{% url 'base:aboutus' %}';">About Us</button>
+        <button onclick="window.location.href='{% url 'base:contactus' %}';">Contact Us</button>
+        <button onclick="window.location.href='{% url 'base:f' %}'">Features</button>
+    </nav>
+
+    <section>
+        <div class="intro">
+            <h2>Introduction to Lempel-Ziv Encoding</h2>
+            <p>Lempel-Ziv encoding is a lossless data compression technique used widely in file compression formats. This algorithm is renowned for its simplicity, efficiency, and ability to handle various types of data. Below are the standout features that make Lempel-Ziv encoding a preferred choice in many applications.</p>
+        </div>
+
+        <div class="feature-card" style="animation: fadeIn 0.5s forwards; animation-delay: 0.2s;">
+            <h2>Efficiency in Compression</h2>
+            <p>Lempel-Ziv encoding can compress data without losing any information. It achieves this by identifying and storing recurring patterns, replacing redundant sequences with shorter references, and greatly reducing file size.</p>
+        </div>
+
+        <div class="feature-card" style="animation: fadeIn 0.5s forwards; animation-delay: 0.4s;">
+            <h2>Algorithm Flexibility</h2>
+            <p>The algorithm is highly adaptable and works well with various types of data, from text and binary files to multimedia formats. This versatility has made it a foundation for file compression formats like ZIP, GIF, and PNG.</p>
+        </div>
+
+        <div class="feature-card" style="animation: fadeIn 0.5s forwards; animation-delay: 0.6s;">
+            <h2>Decompression Accuracy</h2>
+            <p>With Lempel-Ziv encoding, data is restored to its original form upon decompression. This lossless nature ensures that every bit of information remains intact, making it essential in fields where precision is crucial.</p>
+        </div>
+
+        <div class="feature-card" style="animation: fadeIn 0.5s forwards; animation-delay: 0.8s;">
+            <h2>Widespread Application</h2>
+            <p>Lempel-Ziv encoding is a core technology behind numerous data compression standards. Whether you're streaming media, transferring files, or storing data, chances are Lempel-Ziv or its derivatives play a role in the process.</p>
+        </div>
+
+        <div class="feature-card" style="animation: fadeIn 0.5s forwards; animation-delay: 1s;">
+            <h2>Memory and Performance Optimization</h2>
+            <p>The encoding process requires only a modest amount of memory and processing power, making it suitable for real-time applications and devices with limited resources.</p>
+        </div>
+    </section>
+</body>
+</html>
+{% endblock %}

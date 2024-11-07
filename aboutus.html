@@ -1,0 +1,147 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4ff; 
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #0047ab; 
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 2em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #87cefa; 
+            padding: 10px 0;
+        }
+        nav button {
+            background-color: #4682b4; 
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav button:hover {
+            background-color: #0056b3; 
+        }
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .intro {
+            background-color: #e0f7fa; 
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        .card {
+            background-color: white; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            opacity: 0; 
+            transform: scale(0.95); 
+            transition: transform 0.3s ease, opacity 0.3s ease; 
+        }
+        h2 {
+            color: #0047ab; 
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .card:hover {
+            transform: scale(1.05); 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        About Us
+    </header>
+
+    <nav>
+        <button onclick="window.location.href='{% url 'base:home' %}';">Home</button>
+        <button onclick="window.location.href='{% url 'base:aboutus' %}'">About Us</button>
+        <button onclick="window.location.href='{% url 'base:contactus' %}'">Contact Us</button>
+        <button onclick="window.location.href='{% url 'base:f' %}'">Features</button>
+        
+    </nav>
+
+    <section>
+        <div class="intro">
+            <h2>Welcome to Our Website</h2>
+            <p>We are dedicated to providing comprehensive resources on data compression techniques, specifically focusing on algorithms like Lempel-Ziv and Huffman Encoding. Our goal is to make complex concepts accessible to everyone, from students to professionals in the field.</p>
+            <p>Data compression plays a crucial role in modern computing, enabling efficient data storage and transmission. As the volume of digital information continues to grow exponentially, the need for effective compression methods has never been more critical. By exploring various encoding techniques, we aim to help our users understand the fundamental principles that underpin these technologies.</p>
+        </div>
+
+        <div class="card" style="animation: fadeIn 0.5s forwards; animation-delay: 0.2s;">
+            <h2>Our Mission</h2>
+            <p>Our mission is to educate and empower individuals interested in data compression and information theory. We aim to provide clear, concise, and accurate information on various encoding techniques, enabling users to understand and apply these methods in practical scenarios.</p>
+            <p>We believe that a solid understanding of data compression can enhance skills in programming, data analysis, and digital communication, opening new avenues for innovation and creativity.</p>
+        </div>
+
+        <div class="card" style="animation: fadeIn 0.5s forwards; animation-delay: 0.4s;">
+            <h2>Meet the Team</h2>
+            <p>Our team consists of experienced professionals and enthusiasts in computer science and data processing. We are passionate about technology and committed to sharing our knowledge with others.</p>
+            <ul>
+                <li><strong>John Doe</strong> - Lead Developer</li>
+                <li><strong>Jane Smith</strong> - Data Scientist</li>
+                <li><strong>Emily Johnson</strong> - Content Writer</li>
+            </ul>
+            <p>Together, we strive to create an engaging and informative platform that caters to learners at all levels.</p>
+        </div>
+
+        <div class="card" style="animation: fadeIn 0.5s forwards; animation-delay: 0.6s;">
+            <h2>The Importance of Data Compression</h2>
+            <p>In today's digital age, data compression is a key technology that facilitates the efficient storage and transmission of information. Whether it's sending a file via email, streaming a video, or storing images, effective compression algorithms like Lempel-Ziv are integral to optimizing performance and user experience.</p>
+            <p>Understanding these algorithms not only helps in selecting the right tools for data management but also enhances problem-solving skills in software development and data science.</p>
+        </div>
+
+        <div class="card" style="animation: fadeIn 0.5s forwards; animation-delay: 0.8s;">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feedback, or inquiries, feel free to reach out to us:</p>
+            <ul>
+                <li>Email: support@dataencoding.com</li>
+                <li>Phone: (123) 456-7890</li>
+                <li>Address: 123 Data St, Tech City, TX, 12345</li>
+            </ul>
+            <p>We value your input and are always here to help!</p>
+        </div>
+    </section>
+
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0; 
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+</html>
+
+{% endblock %}
